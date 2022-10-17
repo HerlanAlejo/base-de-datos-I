@@ -1,0 +1,249 @@
+--Esto sirve para crear una base de datos
+CREATE DATABASE universidad_unifranz1;
+
+
+--Esto me sirve para conectarme a una base de datos
+--Por que se supone que puede haber muchas bases de datos
+
+USE universidad_unifranz1;
+--Eliminando base datos
+CREATE DATABASE ejemplo;
+
+--Con "Drop Datebase" (Nombre) Eliminamos la base de datos
+DROP DATABASE ejemplo;
+
+CREATE TABLE estudiante(
+     codigo_estuadiante varchar (20) PRIMARY KEY,
+	 nombres varchar (25),
+	 apellidos varchar (20),
+	 semestre integer,
+	 nro_materias integer
+);
+CREATE TABLE Producto(
+     modelo varchar (20),
+	 codigo varchar (20) primary key,
+	 tamaño varchar (10),
+	 color varchar (20),
+	 precio integer
+);
+--para mostrar todos los datos o registros de la tabla
+select*
+from estudiante;
+
+insert into estudiante(codigo_estuadiante,nombres,apellidos,semestre,nro_materias)
+values ('SIS-13217366','Herlan Luis','Alejo Mamani',2,7);
+
+select*
+from Producto;
+
+insert into Producto(modelo,codigo,tamaño,color,precio)
+values ('Samgung','123456','50x20','negro',3000);
+insert into Producto(modelo,codigo,tamaño,color,precio)
+values ('Xiomi','156466','30x20','blanco',2000);
+insert into Producto(modelo,codigo,tamaño,color,precio)
+values ('LG','1235456456','30x10','azul',1200);
+--crear una tabla
+CREATE TABLE estudiantes(
+cod_sis varchar(20) PRIMARY KEY,
+fullname varchar(20),
+edad integer,
+email varchar(100)
+);
+select*
+from estudiantes;
+insert into estudiantes(cod_sis,fullname,edad,email)
+values('SIS13217366','Herlan Alejo',19,'eate.herlanluis.alejo.ma.@unifranz.edu.bo');
+CREATE TABLE materias(
+cod_mat varchar(20) PRIMARY KEY,
+nombre varchar(20),
+aula integer
+);
+select*
+from materias;
+insert into materias(cod_mat,nombre,aula)
+values('PRO-1','Programacion',214);
+--como relacionar 2 tablas
+CREATE TABLE inscripcion(
+id_inscripcion integer PRIMARY KEY,
+cod_sis varchar (20),
+cod_mat varchar (20),
+semestre varchar(30),
+gestion integer,
+FOREIGN KEY (cod_sis) REFERENCES estudiantes (cod_sis),
+FOREIGN KEY (cod_mat) REFERENCES materias (cod_mat)
+);
+DROP TABLE inscripcion;
+DROP TABLE estudiantes;
+DROP TABLE materias;
+
+CREATE TABLE estudiantes(
+ci varchar(12) PRIMARY KEY,
+nombres varchar(20),
+apellidos varchar(20),
+edad integer,
+fono integer, 
+email varchar(100)
+);
+select* 
+from estudiantes;
+
+insert into estudiantes(ci,nombres,apellidos,edad,fono,email)
+values ('35456465C','Herlan','Alejo',20,79505353);
+
+drop table estudiantes;
+CREATE TABLE estudiantes(
+ci varchar(12) PRIMARY KEY NOT NULL,
+nombres varchar(20)NOT NULL,
+apellidos varchar(20)NOT NULL,
+edad integer NOT NULL,
+fono integer NOT NULL, 
+email varchar(100) NOT NULL
+);
+insert into estudiantes(ci,nombres,apellidos,edad,fono,email)
+values ('35456465C','Herlan','Alejo',20,79505353,'jkgjs65@gmail.com');
+
+CREATE TABLE Estuadiantes2(
+ci varchar(12) PRIMARY KEY ,
+nombres varchar(20),
+apellidos varchar(20),
+edad integer,
+fono integer, 
+email varchar(100)
+);
+
+select*
+from Estuadiantes2;
+
+insert into Estuadiantes2(ci,nombres,apellidos,edad)
+values ('354555465','Herlan','Alejo',20);
+drop table estuadiantes2;
+
+--not null sirve para forzar a agregar datos 
+
+CREATE TABLE Estuadiantes2(
+ci varchar(12) PRIMARY KEY not null,
+nombres varchar(20)not null,
+apellidos varchar(20)not null,
+edad integer not null,
+fono integer not null, 
+email varchar(100) not null
+);
+select*
+from Estuadiantes2;
+
+insert into Estuadiantes2(ci,nombres,apellidos,edad,fono,email)
+values ('354555465','Herlan','Alejo',20,78694566,'jkshgjgmail.com');
+
+--trunCate me sirve para eliminar todos los datos de una tabla
+
+TRUNCATE TABLE Estuadiantes2; 
+
+INSERT INTO estuadiantes2 (ci, nombres, apellidos, edad, fono, email)
+             VALUES ('12344511LP', 'nombre1', 'apellidos1', 16, 123456, 'nombre1@gmail.com');
+INSERT INTO estuadiantes2 (ci, nombres, apellidos, edad, fono, email)
+             VALUES ('12346522LP', 'nombre2', 'apellidos2', 20, 123456, 'nombre2@gmail.com');
+INSERT INTO estuadiantes2 (ci, nombres, apellidos, edad, fono, email)
+             VALUES ('123423533LP', 'nombre3', 'apellidos3', 25, 123456, 'nombre3@gmail.com');
+INSERT INTO estuadiantes2 (ci, nombres, apellidos, edad, fono, email)
+             VALUES ('12394544LP', 'nombre4', 'apellidos4', 17, 123456, 'nombre4@gmail.com');
+INSERT INTO estuadiantes2 (ci, nombres, apellidos, edad, fono, email)
+             VALUES ('123451255LP', 'nombre5', 'apellidos5', 24, 123456, 'nombre5@gmail.com');
+			 
+			 select* from Estuadiantes2;
+
+--ALTER TABLE sirve para agregar un nuevo datos
+
+ALTER TABLE estuadiantes2 ADD direccion VARCHAR(200);
+ALTER TABLE estuadiantes2 ADD 
+fax VARCHAR(10),
+genero VARCHAR(10);
+--Para eliminar un campo de una tabla
+--ejecuto la siguiente (DROP)
+
+ALTER TABLE Estuadiantes2 DROP COLUMN fax;
+
+--Segun disenho
+--solo se manejaraa f para femenino y m para masculino
+--debera modificar la columna genero
+
+ALTER TABLE Estuadiantes2 ALTER COLUMN genero char;
+
+-- DDL=Data definition language=DROP TABLE, ALTER TABLE, CREATE DATABASE
+--DML=dATA MANIPULATION 
+
+--MOSTRAR LOS NOMBRES Y APELLIDOS DE LOS  ESTUDIANTES
+--1ER PASO: NOMBRES, APELLIDOS
+--2DO PASO: ESTUDIANTES 
+--SELECT   aqui debe ir lo que quieres mostrar (CAMPOS)
+--FROM       aqui debe de ir de donde obtener esos valores (TABLAS)
+--WHERE    aqui debe de ir las condiciones (CONDITIONS)
+
+SELECT  nombres, apellidos 
+FROM   Estuadiantes2; 
+
+
+--mostrar el nombre, el apellido y la edad que tienen los estudiantes.
+
+SELECT  nombres, apellidos, edad
+FROM   Estuadiantes2;
+
+
+
+--mostrar todos los datos del estudiante donde cuyo nombre sea igual a nombre4
+--1er paso: todoso(*)
+--2do paso: estudiante
+--3er paso: nombre = nombre4
+
+SELECT*
+FROM Estuadiantes2
+WHERE nombres = 'nombre4';
+
+--Mostrar todos los registros cuya edad sea mayor a 18.
+
+SELECT*
+FROM Estuadiantes2
+WHERE edad > 18;
+
+--mostrar aquellos registros en donde el campo GENERO SEA VACIO O NULO
+
+SELECT*
+FROM Estuadiantes2
+WHERE genero is null;
+
+--Mostrar los registros en donde cuya EDAD sea PAR.  (o IMPAR).
+--Para el caso de los PARES debería mostrar
+
+
+SELECT*
+FROM Estuadiantes2
+WHERE edad % 2=0;
+
+--distinto puede ser representado por (<>) o (!=).
+
+--mostrar los nombres, apellidos y edad de los estudiantes
+--manejo de alias 
+
+SELECT est.nombres, est.apellidos, est.edad
+FROM Estuadiantes2 AS est
+WHERE est.edad % 2=0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
