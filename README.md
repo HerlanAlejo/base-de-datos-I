@@ -3,25 +3,25 @@ portafolio de la asignatura Base de Datos I
 <h1 align="center">BASE DE DATOS I</h1>
 <h3 align="center">DEFENSA HITO-3</h3>
 
-## ✨ Link de video
+## ✨ HITO 1
 
 Presentacion en video Defensa hito-3
 
 ```sh
-https://drive.google.com/file/d/1qpJjhsfs0TcrY9RjqZxrFzgCPV5OvZMP/view?usp=sharing
-```
+https://github.com/HerlanAlejo/base-de-datos-I/tree/main/Hito1```
 
-## 🚀 Power Point
+## 🚀 HITO 2
 
 Clone the repository
 
 ```sh
-https://github.com/HerlanAlejo/base-de-datos-I/blob/main/Defensa-Hito3/DEFENSA%20HITO-3.pptx```
+https://github.com/HerlanAlejo/base-de-datos-I/tree/main/defensa-hito2
 
+## ✨ HITO 3
 
-## ✨ Presentacion PDF
 ```sh
-https://github.com/HerlanAlejo/base-de-datos-I/blob/main/Defensa-Hito3/DEFENSA%20HITO-3.pdf
+https://github.com/HerlanAlejo/base-de-datos-I/tree/main/Defensa-Hito3
+https://github.com/HerlanAlejo/base-de-datos-I/tree/main/Hito-3
 ```
 
 
